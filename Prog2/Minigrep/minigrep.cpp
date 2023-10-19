@@ -37,6 +37,8 @@ int main(int argc, char *argv[]){
 
     std::string line;
 
+    int coincidences = 0;
+
     //    Search loop    //
     
     while (std::getline(file, line)) {
@@ -63,12 +65,20 @@ int main(int argc, char *argv[]){
             }
 
             std::cout << part_a << ANSI_RESET << color_code << part_d << ANSI_RESET << part_p << std::endl;
-            ;//Here needs to be de counter of coincidences
+            coincidences++;
         } else {
             std::cout << line << std::endl;
         }
     }
+file.close();
 
-    
+    if (coincidences > 0) {
+        std::cout << coincidences << " coincidence(s)" << std::endl;
+    } else {
+        std::cout << "No coincidences" << std::endl;
+    }
+
 return 0;
+    
+
 }
